@@ -1,0 +1,1161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ray Craftlee | FuzzyWire Bouquet Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:linear-gradient(to bottom,#fff7fb,#eef5ff,#dcecff);
+      color:#243b53;
+      overflow-x:hidden;
+    }
+
+    /* HEADER */
+
+   header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:1000;
+
+  background:rgba(246, 246, 246, 0); /* transparent but visible */
+  border-bottom:0px solid rgba(255,255,255,0.25);
+
+  backdrop-filter:none; /* REMOVE blur */
+}
+
+    nav{
+      width:92%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.6rem;
+      font-weight:700;
+      color:#4a78c7;
+    }
+
+    .logo span{
+      color:#ff7eb6;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#355070;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      width:0%;
+      height:2px;
+      left:0;
+      bottom:-6px;
+      background:#ff7eb6;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .nav-links a:hover{
+      color:#ff7eb6;
+    }
+
+    /* HERO */
+
+    .hero{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+  text-align:center;
+}
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:20px;
+      color:#355070;
+    }
+
+    .hero-text h1 span{
+      color:#ff7eb6;
+    }
+
+    .hero-text p{
+      line-height:1.9;
+      color:#5f7287;
+      margin-bottom:35px;
+      max-width:600px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:15px 34px;
+      background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+      color:white;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(255,143,196,0.3);
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 35px rgba(122,182,255,0.35);
+    }
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+      display:flex;
+      justify-content:center;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:470px;
+      border-radius:30px;
+      object-fit:cover;
+      box-shadow:0 20px 40px rgba(0,0,0,0.12);
+      transition:0.5s;
+    }
+
+    .hero-image img:hover{
+      transform:scale(1.03);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.7rem;
+      color:#355070;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#6b7d90;
+    }
+
+    .category-title{
+      font-size:2rem;
+      margin-bottom:35px;
+      border-left:6px solid #ff8fc4;
+      padding-left:14px;
+      color:#355070;
+    }
+
+    /* CARDS */
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.4s;
+      position:relative;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .card img{
+      width:100%;
+      height:290px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.05);
+    }
+
+    .price{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+      color:white;
+      padding:10px 18px;
+      border-radius:30px;
+      font-size:0.9rem;
+      font-weight:600;
+      box-shadow:0 5px 18px rgba(122,182,255,0.3);
+    }
+
+    .card-content{
+      padding:24px;
+    }
+
+    .card-content h3{
+      margin-bottom:12px;
+      color:#355070;
+      font-size:1.3rem;
+    }
+
+    .card-content p{
+      color:#6c7c8d;
+      line-height:1.8;
+      margin-bottom:22px;
+      font-size:0.95rem;
+    }
+
+    .order-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#edf5ff;
+      color:#4679c7;
+      padding:12px 22px;
+      border-radius:14px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .order-btn:hover{
+      background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+      color:white;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      background:rgba(255,255,255,0.75);
+      backdrop-filter:blur(12px);
+      border-radius:30px;
+      padding:50px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .contact-box h2{
+      margin-bottom:20px;
+      color:#355070;
+      font-size:2.3rem;
+    }
+
+    .contact-box p{
+      color:#617487;
+      line-height:2;
+      margin-bottom:10px;
+    }
+
+    .contact-btn{
+      margin-top:25px;
+      display:inline-block;
+      text-decoration:none;
+      padding:14px 32px;
+      border-radius:40px;
+      background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+      color:white;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .contact-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#355070;
+      padding:35px 8%;
+      text-align:center;
+      color:white;
+      margin-top:70px;
+    }
+
+    footer p{
+      opacity:0.85;
+      margin-top:10px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-14px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:950px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+      }
+
+      .hero{
+        text-align:center;
+        padding-top:170px;
+      }
+
+      .hero-text h1{
+        font-size:2.8rem;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-image img{
+        max-width:100%;
+      }
+
+      .section-title h2{
+        font-size:2.1rem;
+      }
+
+      .category-title{
+        font-size:1.5rem;
+      }
+
+      .contact-box{
+        padding:35px 25px;
+      }
+    }
+
+    @media(max-width:500px){
+
+      .hero-text h1{
+        font-size:2.2rem;
+      }
+
+      .hero-btn,
+      .contact-btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .card img{
+        height:240px;
+      }
+
+    }
+
+    /* ========================= */
+/* HAMBURGER MENU */
+/* ========================= */
+
+.menu-toggle{
+  width:42px;
+  height:42px;
+  display:flex; /* always visible */
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+  border-radius:12px;
+  background:rgba(255,255,255,0.7);
+  transition:0.4s ease;
+
+  position:relative;
+}
+
+nav{
+  position:relative;
+}
+.menu-toggle{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.menu-toggle:hover{
+  transform:scale(1.05);
+}
+
+.menu-toggle span{
+  width:24px;
+  height:3px;
+  border-radius:10px;
+  background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+  transition:0.4s ease;
+}
+
+/* ANIMATION */
+
+.menu-toggle.active span:nth-child(1){
+  transform:translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+  transform:translateY(-9px) rotate(-45deg);
+}
+
+/* ========================= */
+/* SIDEBAR */
+/* ========================= */
+
+.sidebar{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  height:100vh;
+  background:linear-gradient(to bottom,#fef6fb,#e8f3ff,#dcecff);
+  backdrop-filter:blur(15px);
+  z-index:999;
+  padding:120px 40px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  transition:0.5s ease;
+  box-shadow:-10px 0 30px rgba(0,0,0,0.08);
+}
+
+.sidebar.active{
+  right:0;
+}
+
+.sidebar a{
+  text-decoration:none;
+  color:#355070;
+  font-size:1.1rem;
+  font-weight:600;
+  transition:0.3s;
+  position:relative;
+}
+
+.sidebar a:hover{
+  color:#ff7eb6;
+  transform:translateX(6px);
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:950px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  nav{
+    flex-direction:row;
+  }
+
+}
+
+/* ========================= */
+/* HERO LANDING PAGE */
+/* ========================= */
+
+.hero{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+}
+
+/* ========================= */
+/* CAROUSEL */
+/* ========================= */
+
+.hero-slider{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0;
+  transition:1.5s ease-in-out;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+
+.hero-overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    to bottom,
+    rgba(18,33,52,0.45),
+    rgba(18,33,52,0.55)
+  );
+  z-index:1;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  animation:fadeUp 1s ease;
+}
+
+.hero-content h1{
+  font-size:6rem;
+  color:white;
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.hero-content h1 span{
+  color:#ff9fc9;
+}
+
+.hero-content p{
+  color:#f1f5ff;
+  font-size:1.2rem;
+  letter-spacing:1px;
+  margin-bottom:35px;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:15px 34px;
+  text-decoration:none;
+  background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+  color:white;
+  border-radius:40px;
+  font-weight:600;
+  transition:0.4s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero-btn:hover{
+  transform:translateY(-5px);
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:768px){
+
+  .hero-content h1{
+    font-size:3.2rem;
+  }
+
+  .hero-content p{
+    font-size:1rem;
+  }
+
+}
+
+/* ========================= */
+/* CUSTOM IMAGE LOGO */
+/* ========================= */
+
+.logo{
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #4a78c7;
+  text-transform: lowercase;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.logo span{
+  color:#ff7eb6;
+}
+
+.logo:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+@media(max-width:768px){
+  .logo img{
+    width: 85px;
+  }
+}
+
+.logo img{
+  width: 240px;
+  object-fit: contain;
+  filter: none;
+}
+
+/* ========================= */
+/* HERO BRAND LOGO */
+/* ========================= */
+
+.brand-logo-container{
+  display:flex;
+  flex-direction:column; /* THIS forces vertical stacking */
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  text-align:center;
+  z-index:2;
+}
+
+.hero-brand-logo{
+  width:720px;
+  max-width:95%;
+  object-fit:contain;
+
+  /* SOFT GLOW */
+  filter:
+    drop-shadow(0 8px 20px rgba(255,255,255,0.35))
+    drop-shadow(0 5px 30px rgba(255,255,255,0.25));
+
+  transition:0.5s ease;
+}
+
+.hero-brand-logo:hover{
+  transform:scale(1.03);
+}
+
+/* SUBTITLE */
+
+.brand-subtitle{
+  color:white;
+  font-size:1.1rem;
+  letter-spacing:2px;
+  margin-top:10px;
+  margin-bottom:35px;
+  font-weight:500;
+  text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero-brand-logo{
+    width:420px;
+  }
+
+  .brand-subtitle{
+    font-size:0.9rem;
+    letter-spacing:1px;
+    padding:0 15px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero-brand-logo{
+    width:300px;
+  }
+
+}
+
+.brand-description{
+  color:#f1f5ff;
+  font-size:1rem;
+  max-width:650px;
+  margin-top:15px;   /* space from logo */
+  margin-bottom:25px;
+  text-align:center;
+  line-height:1.8;
+  letter-spacing:0.5px;
+  opacity:0.9;
+}
+
+.brand-description span{
+  color:#ff9fc9;
+  font-weight:600;
+}
+
+.contact-icons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.contact-icons a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.8);
+  transition:0.3s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-icons a:hover{
+  transform:translateY(-5px) scale(1.05);
+  background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+}
+
+.contact-icons img{
+  width:26px;
+  height:26px;
+}
+
+@media(max-width:950px){
+
+  .hero{
+    padding:0;
+    margin:0;
+    min-height:100vh;
+  }
+
+  .hero-content{
+    padding:0 15px;
+  }
+
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <nav>
+
+      <!-- REPLACE YOUR OLD LOGO WITH THIS -->
+
+<div class="logo">
+  <img src="logo.png" alt="Ray Craftlee Logo">
+</div>
+
+      <!-- ADD THIS INSIDE YOUR <nav> -->
+<!-- PLACE THIS RIGHT BELOW THE LOGO -->
+
+<div class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- REPLACE YOUR OLD .nav-links DIV WITH THIS -->
+
+<div class="sidebar" id="sidebar">
+
+  <a href="#home">Home</a>
+  <a href="#bouquets">Bouquets</a>
+  <a href="#keychains">Keychains</a>
+  <a href="#contact">Contact</a>
+
+</div>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <!-- REPLACE YOUR OLD HERO SECTION WITH THIS -->
+
+<section class="hero" id="home">
+
+  <!-- BACKGROUND CAROUSEL -->
+
+  <div class="hero-slider">
+
+    <!-- REPLACEABLE IMAGES -->
+
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=1200&auto=format&fit=crop" alt="">
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=1200&auto=format&fit=crop" alt="">
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1200&auto=format&fit=crop" alt="">
+    </div>
+
+  </div>
+
+  <!-- DARK OVERLAY -->
+
+  <div class="hero-overlay"></div>
+
+  <!-- HERO CONTENT -->
+
+  <!-- PUT THIS INSIDE YOUR HERO CONTENT -->
+
+<div class="brand-logo-container">
+
+  <!-- REPLACE THIS IMAGE WITH YOUR BRAND PNG -->
+  <img src="logo2.png" alt="Ray Craftlee Logo" class="hero-brand-logo">
+<p class="brand-description">
+  A handcrafted world of fuzzy wire artistry — where every <span>bouquet</span> and <span>keychain</span> is made with care, creativity, and meaning.
+</p>
+</div>
+
+<p class="brand-subtitle">
+  HANDCRAFTED FUZZYWIRE BOUQUETS & KEYCHAINS
+</p>
+
+<a href="#bouquets" class="hero-btn">
+  Explore Collection
+</a>
+
+</section>
+
+  <!-- BOUQUETS -->
+
+  <section id="bouquets">
+
+    <div class="section-title">
+      <h2>Bouquet Collection</h2>
+      <p>Handcrafted fuzzy wire bouquet arrangements</p>
+    </div>
+
+    <h3 class="category-title">
+      FuzzyWire Bouquets
+    </h3>
+
+    <div class="product-grid">
+
+      <div class="card">
+
+        <div class="price">₱399</div>
+
+        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+
+          <h3>Sky Bloom Bouquet</h3>
+
+          <p>
+            Elegant blue and pink fuzzy wire bouquet with premium wrapping and handcrafted floral arrangement.
+          </p>
+
+          <!-- FACEBOOK MESSAGE LINK -->
+          <a href="m.me/1007282859144946" class="order-btn" target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="price">₱549</div>
+
+        <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+
+          <h3>Ocean Petal Bouquet</h3>
+
+          <p>
+            Sophisticated bouquet crafted with layered wrapping and luxury fuzzy wire floral details.
+          </p>
+
+          <a href="m.me/1007282859144946" class="order-btn" target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="price">₱699</div>
+
+        <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+
+          <h3>Royal Collection</h3>
+
+          <p>
+            Premium fuzzy wire bouquet collection designed for luxury gifting and elegant presentation.
+          </p>
+
+          <a href="m.me/1007282859144946" class="order-btn" target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- KEYCHAIN -->
+
+  <section id="keychains">
+
+    <div class="section-title">
+      <h2>Keychain Collection</h2>
+      <p>Handcrafted fuzzy wire accessories</p>
+    </div>
+
+    <h3 class="category-title">
+      FuzzyWire Keychains
+    </h3>
+
+    <div class="product-grid">
+
+      <div class="card">
+
+        <div class="price">₱99</div>
+
+        <img src="https://images.unsplash.com/photo-1616628182509-6c5df1aebf7f?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+
+          <h3>Mini Bloom Charm</h3>
+
+          <p>
+            Minimal fuzzy wire keychain with detailed handcrafted finishing and lightweight design.
+          </p>
+
+          <a href="m.me/1007282859144946" class="order-btn" target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="price">₱149</div>
+
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <div class="card-content">
+
+          <h3>Pink Wire Charm</h3>
+
+          <p>
+            Stylish handcrafted fuzzy wire accessory perfect for keys, bags, and personalized gifts.
+          </p>
+
+          <a href="m.me/1007282859144946" class="order-btn" target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2>Contact Information</h2>
+
+      <div class="contact-icons">
+
+  <a href="https://m.me/1007282859144946" target="_blank" title="Facebook Messenger">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Messenger">
+  </a>
+
+  <a href="https://instagram.com/xxxxxxxxx" target="_blank" title="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+
+  <a href="tel:09XXXXXXXXX" title="Phone">
+    <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone">
+  </a>
+
+  <a href="mailto:raycraftlee@gmail.com" title="Email">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+  </a>
+
+</div>
+
+      <a href="https://m.me/1007282859144946" target="_blank" class="contact-btn">
+        Message Us on Facebook
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>Ray Craftlee</h3>
+
+    <p>
+      Premium Handmade FuzzyWire Bouquets & Keychains
+    </p>
+
+  </footer>
+<!-- ADD THIS SCRIPT BEFORE </body> -->
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  sidebar.classList.toggle("active");
+});
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+  link.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    menuToggle.classList.remove("active");
+  });
+});
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function changeSlide(){
+
+  slides[currentSlide].classList.remove("active");
+
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  slides[currentSlide].classList.add("active");
+
+}
+
+setInterval(changeSlide, 4000);
+
+
+</script>
+</body>
+</html>
