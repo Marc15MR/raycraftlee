@@ -1455,6 +1455,49 @@
           overflow: hidden;
         }
       }
+
+      /* ===================================== */
+/* MOBILE LOGO POSITION FIX */
+/* ===================================== */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 0;
+  }
+
+  .logo {
+    position: relative;
+    left: -8px; /* moves logo slightly to upper-left */
+    top: -2px;
+  }
+
+  .logo img {
+    width: 150px; /* smaller mobile logo */
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .menu-toggle {
+    right: 2px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width: 480px) {
+  .logo {
+    left: -12px;
+    top: -4px;
+  }
+
+  .logo img {
+    width: 130px;
+  }
+
+  nav {
+    padding: 12px 0;
+  }
+}
     </style>
   </head>
 
