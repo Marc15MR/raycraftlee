@@ -488,146 +488,162 @@
       /* ========================= */
 
       /* ===================================== */
-/* PREMIUM FLOATING SIDEBAR (DESKTOP STYLE)
+      /* PREMIUM FLOATING SIDEBAR (DESKTOP STYLE)
 /* ===================================== */
 
-.sidebar{
-  position:fixed;
-  top:0;
-  right:-340px;
-  width:320px;
-  height:100vh;
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -340px;
+        width: 320px;
+        height: 100vh;
 
-  padding:110px 28px 28px;
+        padding: 110px 28px 28px;
 
-  display:flex;
-  flex-direction:column;
-  gap:14px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
 
-  background:
-    linear-gradient(180deg,
-      rgba(255,255,255,0.92),
-      rgba(245,245,255,0.85)
-    );
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.92),
+          rgba(245, 245, 255, 0.85)
+        );
 
-  backdrop-filter:blur(18px);
+        backdrop-filter: blur(18px);
 
-  border-left:1px solid rgba(255,255,255,0.6);
+        border-left: 1px solid rgba(255, 255, 255, 0.6);
 
-  box-shadow:-20px 0 50px rgba(0,0,0,0.08);
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.08);
 
-  transition:0.5s ease;
-  z-index:999;
+        transition: 0.5s ease;
+        z-index: 999;
 
-  overflow:hidden;
-}
+        overflow: hidden;
+      }
 
-/* OPEN STATE */
-.sidebar.active{
-  right:0;
-}
+      /* OPEN STATE */
+      .sidebar.active {
+        right: 0;
+      }
 
-/* DECORATIVE FLOWER BACKGROUND */
-.sidebar::before{
-  content:"";
-  position:absolute;
-  bottom:-40px;
-  right:-40px;
-  width:260px;
-  height:260px;
+      /* DECORATIVE FLOWER BACKGROUND */
+      .sidebar::before {
+        content: "";
+        position: absolute;
+        bottom: -40px;
+        right: -40px;
+        width: 260px;
+        height: 260px;
 
-  background:url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Flower_line_art.svg");
-  background-size:contain;
-  background-repeat:no-repeat;
+        background: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Flower_line_art.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
 
-  opacity:0.12;
-  transform:rotate(-18deg);
+        opacity: 0.12;
+        transform: rotate(-18deg);
 
-  pointer-events:none;
-}
+        pointer-events: none;
+      }
 
-/* SOFT FLOATING SPARKLES INSIDE SIDEBAR */
-.sidebar::after{
-  content:"";
-  position:absolute;
-  inset:0;
+      /* SOFT FLOATING SPARKLES INSIDE SIDEBAR */
+      .sidebar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
 
-  background-image:
-    radial-gradient(2px 2px at 40px 80px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1.5px 1.5px at 120px 200px, rgba(255,182,222,0.7), transparent),
-    radial-gradient(2px 2px at 200px 320px, rgba(122,182,255,0.6), transparent);
+        background-image:
+          radial-gradient(
+            2px 2px at 40px 80px,
+            rgba(255, 255, 255, 0.9),
+            transparent
+          ),
+          radial-gradient(
+            1.5px 1.5px at 120px 200px,
+            rgba(255, 182, 222, 0.7),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 200px 320px,
+            rgba(122, 182, 255, 0.6),
+            transparent
+          );
 
-  opacity:0.25;
+        opacity: 0.25;
 
-  animation:sidebarSparkle 18s linear infinite;
+        animation: sidebarSparkle 18s linear infinite;
 
-  pointer-events:none;
-}
+        pointer-events: none;
+      }
 
-@keyframes sidebarSparkle{
-  from{ transform:translateY(0); }
-  to{ transform:translateY(-200px); }
-}
+      @keyframes sidebarSparkle {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-200px);
+        }
+      }
 
+      /* ===================================== */
+      /* MENU ITEMS (UPGRADED STYLE)
 /* ===================================== */
-/* MENU ITEMS (UPGRADED STYLE)
-/* ===================================== */
 
-.sidebar a{
-  display:flex;
-  align-items:center;
-  gap:12px;
+      .sidebar a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
 
-  padding:14px 16px;
+        padding: 14px 16px;
 
-  border-radius:16px;
+        border-radius: 16px;
 
-  text-decoration:none;
+        text-decoration: none;
 
-  font-size:1rem;
-  font-weight:600;
+        font-size: 1rem;
+        font-weight: 600;
 
-  color:#355070;
+        color: #355070;
 
-  background:rgba(255,255,255,0.55);
+        background: rgba(255, 255, 255, 0.55);
 
-  border:1px solid rgba(255,255,255,0.6);
+        border: 1px solid rgba(255, 255, 255, 0.6);
 
-  box-shadow:0 6px 15px rgba(0,0,0,0.04);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
 
-  transition:0.3s ease;
-  position:relative;
-}
+        transition: 0.3s ease;
+        position: relative;
+      }
 
-/* HOVER EFFECT */
-.sidebar a:hover{
-  transform:translateX(6px);
+      /* HOVER EFFECT */
+      .sidebar a:hover {
+        transform: translateX(6px);
 
-  background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+        background: linear-gradient(to right, #7ab6ff, #ff8fc4);
 
-  color:white;
+        color: white;
 
-  box-shadow:0 10px 25px rgba(122,182,255,0.25);
-}
+        box-shadow: 0 10px 25px rgba(122, 182, 255, 0.25);
+      }
 
-/* ICON DOT STYLE (OPTIONAL CLEAN LOOK) */
-.sidebar a::before{
-  content:"";
+      /* ICON DOT STYLE (OPTIONAL CLEAN LOOK) */
+      .sidebar a::before {
+        content: "";
 
-  width:10px;
-  height:10px;
+        width: 10px;
+        height: 10px;
 
-  border-radius:50%;
+        border-radius: 50%;
 
-  background:linear-gradient(to right,#7ab6ff,#ff8fc4);
+        background: linear-gradient(to right, #7ab6ff, #ff8fc4);
 
-  flex-shrink:0;
-}
+        flex-shrink: 0;
+      }
 
-/* ACTIVE STYLE (OPTIONAL) */
-.sidebar a:active{
-  transform:scale(0.98);
-}
+      /* ACTIVE STYLE (OPTIONAL) */
+      .sidebar a:active {
+        transform: scale(0.98);
+      }
 
       .sidebar a {
         text-decoration: none;
@@ -720,6 +736,58 @@
           rgba(18, 33, 52, 0.55)
         );
         z-index: 1;
+      }
+
+      /* ===================================== */
+      /* SIDEBAR SYMBOL ICONS */
+      /* ===================================== */
+
+      .side-icon {
+        width: 28px;
+        height: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+        color: #6b88d6;
+
+        background: linear-gradient(
+          135deg,
+          rgba(122, 182, 255, 0.18),
+          rgba(255, 143, 196, 0.18)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.55);
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+
+        transition: 0.3s ease;
+
+        flex-shrink: 0;
+      }
+
+      /* HOVER EFFECT */
+
+      .sidebar a:hover .side-icon {
+        background: rgba(255, 255, 255, 0.22);
+
+        color: white;
+
+        transform: scale(1.08) rotate(-6deg);
+
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+      }
+
+      /* REMOVE OLD DOT */
+
+      .sidebar a::before {
+        display: none;
       }
 
       /* ========================= */
@@ -940,6 +1008,109 @@
           padding: 0 15px;
         }
       }
+
+      /* ===================================== */
+      /* ADDITIONAL BOUQUET CHOICES */
+      /* ===================================== */
+
+      #additional-options {
+        position: relative;
+      }
+
+      .choices-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 28px;
+        margin-top: 40px;
+      }
+
+      /* CARD */
+
+      .choice-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.82),
+          rgba(255, 255, 255, 0.65)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.6);
+
+        backdrop-filter: blur(14px);
+
+        border-radius: 28px;
+
+        padding: 35px 28px;
+
+        text-align: center;
+
+        transition: 0.4s ease;
+
+        box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.05),
+          0 0 25px rgba(255, 182, 222, 0.12);
+      }
+
+      /* HOVER */
+
+      .choice-card:hover {
+        transform: translateY(-10px);
+
+        box-shadow:
+          0 18px 40px rgba(122, 182, 255, 0.12),
+          0 0 30px rgba(255, 143, 196, 0.18);
+      }
+
+      /* ICON */
+
+      .choice-icon {
+        width: 70px;
+        height: 70px;
+
+        margin: auto auto 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 22px;
+
+        background: linear-gradient(
+          135deg,
+          rgba(122, 182, 255, 0.18),
+          rgba(255, 143, 196, 0.18)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.7);
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+      }
+
+      .choice-icon i {
+        font-size: 1.5rem;
+        color: #6b88d6;
+      }
+
+      /* TEXT */
+
+      .choice-card h3 {
+        font-size: 1.2rem;
+        color: #355070;
+        margin-bottom: 12px;
+      }
+
+      .choice-card p {
+        color: #6c7c8d;
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        .choice-card {
+          padding: 30px 22px;
+        }
+      }
     </style>
   </head>
 
@@ -966,10 +1137,25 @@
         <!-- REPLACE YOUR OLD .nav-links DIV WITH THIS -->
 
         <div class="sidebar" id="sidebar">
-          <a href="#home">Home</a>
-          <a href="#bouquets">Bouquets</a>
-          <a href="#keychains">Keychains</a>
-          <a href="#contact">Contact</a>
+          <a href="#home">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+
+          <a href="#bouquets">
+            <i class="fa-solid fa-spa"></i>
+            Bouquets
+          </a>
+
+          <a href="#keychains">
+            <i class="fa-brands fa-pagelines"></i>
+            Keychains
+          </a>
+
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+          </a>
         </div>
       </nav>
     </header>
@@ -1191,6 +1377,72 @@
       </div>
     </section>
 
+
+    <!-- ADDITIONAL BOUQUET CHOICES -->
+
+<section id="additional-options">
+
+  <div class="section-title">
+    <h2>Additional Bouquet Choices</h2>
+    <p>Customize your handcrafted fuzzywire bouquet</p>
+  </div>
+
+  <div class="choices-grid">
+
+    <!-- WRAPPER -->
+
+    
+    <!-- LIGHTS -->
+
+    <div class="choice-card">
+
+      <div class="choice-icon">
+        <i class="fa-solid fa-star"></i>
+      </div>
+
+      <h3>Fairy Lights</h3>
+
+      <p>
+        Soft glowing fairy lights wrapped around your bouquet for a dreamy effect.
+      </p>
+
+    </div>
+
+    <!-- MESSAGE -->
+
+    <div class="choice-card">
+
+      <div class="choice-icon">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+
+      <h3>Custom Message</h3>
+
+      <p>
+        Add a personalized handwritten/printed message card for your special someone.
+      </p>
+
+    </div>
+
+    <!-- COLORS -->
+
+    <div class="choice-card">
+
+      <div class="choice-icon">
+        <i class="fa-solid fa-palette"></i>
+      </div>
+
+      <h3>Color Theme</h3>
+
+      <p>
+        Choose your preferred bouquet color palette.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
     <!-- CONTACT -->
 
     <section id="contact">
