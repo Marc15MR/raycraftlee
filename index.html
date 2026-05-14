@@ -211,10 +211,48 @@
 
       .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
+
+        /* SMALLER ADAPTIVE CARDS */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        gap: 22px;
+
+        align-items: stretch;
       }
 
+      .card {
+        border-radius: 20px;
+      }
+
+      .card img {
+        height: 185px;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card-content h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .card-content p {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 14px;
+      }
+
+      .price {
+        padding: 7px 14px;
+        font-size: 0.78rem;
+      }
+
+      .order-btn {
+        padding: 10px 16px;
+        font-size: 0.82rem;
+        border-radius: 12px;
+      }
       .card {
         background: white;
         border-radius: 25px;
@@ -1456,47 +1494,25 @@
         }
       }
 
-      /* ===================================== */
-/* MOBILE LOGO POSITION FIX */
-/* ===================================== */
-
-@media (max-width: 768px) {
-  nav {
-    padding: 14px 0;
-  }
-
-  .logo {
-    position: relative;
-    left: -8px; /* moves logo slightly to upper-left */
-    top: -2px;
-  }
-
-  .logo img {
-    width: 150px; /* smaller mobile logo */
-    max-width: 100%;
-    object-fit: contain;
-  }
-
-  .menu-toggle {
-    right: 2px;
-  }
+      .see-more-container {
+  text-align: center;
+  margin-top: 30px;
 }
 
-/* EXTRA SMALL DEVICES */
+.see-more-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 40px;
+  background: linear-gradient(to right, #7ab6ff, #ff8fc4);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-@media (max-width: 480px) {
-  .logo {
-    left: -12px;
-    top: -4px;
-  }
-
-  .logo img {
-    width: 130px;
-  }
-
-  nav {
-    padding: 12px 0;
-  }
+.see-more-btn:hover {
+  transform: translateY(-4px);
 }
     </style>
   </head>
@@ -1606,6 +1622,7 @@
     <p class="swipe-note"></p>
 
     <section id="bouquets">
+
       <div class="section-title">
         <h2>Bouquet Collection</h2>
         <p>Handcrafted fuzzy wire bouquet arrangements</p>
@@ -1695,7 +1712,37 @@
             </a>
           </div>
         </div>
+
+        <div class="card">
+          <div class="price">₱799</div>
+
+          <img
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop"
+            alt=""
+          />
+
+          <div class="card-content">
+            <h3>Dream Petals Bouquet</h3>
+
+            <p>
+              Soft pastel fuzzy wire bouquet crafted with elegant wrapping.
+            </p>
+
+            <a
+              href="https://m.me/1007282859144946"
+              class="order-btn"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook-messenger"></i>
+              Order Now
+            </a>
+          </div>
+        </div>
       </div>
+
+      <div class="see-more-container">
+  <a href="shop.html" class="see-more-btn">See More Products</a>
+</div>
     </section>
 
     <!-- KEYCHAIN -->
@@ -1763,6 +1810,10 @@
           </div>
         </div>
       </div>
+
+      <div class="see-more-container">
+  <a href="shop.html" class="see-more-btn">See More Products</a>
+</div>
     </section>
 
     <!-- ADDITIONAL BOUQUET CHOICES -->
