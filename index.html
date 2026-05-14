@@ -1111,6 +1111,350 @@
           padding: 30px 22px;
         }
       }
+
+      /* ===================================== */
+      /* MOBILE PRODUCT CAROUSEL */
+      /* ONLY FOR BOUQUETS & KEYCHAINS */
+      /* ===================================== */
+
+      @media (max-width: 768px) {
+        /* TURN PRODUCT GRID INTO SLIDER */
+
+        #bouquets .product-grid,
+        #keychains .product-grid {
+          display: flex;
+          flex-wrap: nowrap;
+
+          overflow-x: auto;
+          overflow-y: hidden;
+
+          gap: 18px;
+
+          padding-bottom: 10px;
+
+          scroll-snap-type: x mandatory;
+
+          -webkit-overflow-scrolling: touch;
+
+          scrollbar-width: none;
+        }
+
+        /* HIDE SCROLLBAR */
+
+        #bouquets .product-grid::-webkit-scrollbar,
+        #keychains .product-grid::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* CARD WIDTH */
+
+        #bouquets .card,
+        #keychains .card {
+          min-width: 82%;
+          flex: 0 0 auto;
+
+          scroll-snap-align: center;
+
+          border-radius: 28px;
+        }
+
+        /* SMOOTHER CARD LOOK */
+
+        #bouquets .card img,
+        #keychains .card img {
+          height: 260px;
+        }
+
+        /* CENTER FIRST/LAST CARD */
+
+        #bouquets .product-grid::before,
+        #keychains .product-grid::before,
+        #bouquets .product-grid::after,
+        #keychains .product-grid::after {
+          content: "";
+          min-width: 4px;
+        }
+      }
+
+      /* ===================================== */
+      /* SWIPE NOTE */
+      /* ===================================== */
+
+      .swipe-note {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .swipe-note {
+          display: block;
+
+          margin-top: 10px;
+
+          color: #8a97ad;
+
+          font-size: 0.9rem;
+
+          letter-spacing: 0.5px;
+        }
+      }
+
+      /* ===================================== */
+      /* MOBILE CARD SIZE OPTIMIZATION */
+      /* ===================================== */
+
+      @media (max-width: 768px) {
+        /* SECTION SPACING */
+
+        #bouquets,
+        #keychains {
+          padding: 75px 5%;
+        }
+
+        /* GRID */
+
+        #bouquets .product-grid,
+        #keychains .product-grid {
+          gap: 16px;
+          padding-bottom: 8px;
+        }
+
+        /* CARD SIZE */
+
+        #bouquets .card,
+        #keychains .card {
+          min-width: 88%;
+          max-width: 88%;
+
+          border-radius: 24px;
+        }
+
+        /* IMAGE SIZE */
+
+        #bouquets .card img,
+        #keychains .card img {
+          height: 220px;
+        }
+
+        /* CONTENT */
+
+        #bouquets .card-content,
+        #keychains .card-content {
+          padding: 18px;
+        }
+
+        /* TITLE */
+
+        #bouquets .card-content h3,
+        #keychains .card-content h3 {
+          font-size: 1.05rem;
+          margin-bottom: 10px;
+        }
+
+        /* DESCRIPTION */
+
+        #bouquets .card-content p,
+        #keychains .card-content p {
+          font-size: 0.88rem;
+          line-height: 1.7;
+
+          margin-bottom: 18px;
+        }
+
+        /* PRICE */
+
+        #bouquets .price,
+        #keychains .price {
+          top: 14px;
+          right: 14px;
+
+          padding: 8px 14px;
+
+          font-size: 0.78rem;
+        }
+
+        /* BUTTON */
+
+        #bouquets .order-btn,
+        #keychains .order-btn {
+          width: 100%;
+
+          text-align: center;
+
+          padding: 12px 16px;
+
+          font-size: 0.9rem;
+
+          border-radius: 14px;
+        }
+      }
+
+      /* EXTRA SMALL DEVICES */
+
+      @media (max-width: 480px) {
+        #bouquets .card,
+        #keychains .card {
+          min-width: 92%;
+          max-width: 92%;
+        }
+
+        #bouquets .card img,
+        #keychains .card img {
+          height: 200px;
+        }
+
+        #bouquets .card-content,
+        #keychains .card-content {
+          padding: 16px;
+        }
+
+        #bouquets .card-content h3,
+        #keychains .card-content h3 {
+          font-size: 1rem;
+        }
+
+        #bouquets .card-content p,
+        #keychains .card-content p {
+          font-size: 0.84rem;
+        }
+      }
+
+      /* ===================================== */
+      /* MOBILE PRODUCT CAROUSEL */
+      /* BOUQUETS + KEYCHAINS + CHOICES */
+      /* ===================================== */
+
+      @media (max-width: 768px) {
+        /* PRODUCT GRID */
+
+        .product-grid,
+        .choices-grid {
+          display: flex;
+          flex-wrap: nowrap;
+
+          overflow-x: auto;
+          overflow-y: hidden;
+
+          gap: 18px;
+
+          padding-bottom: 15px;
+          padding-left: 5px;
+
+          scroll-snap-type: x mandatory;
+
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* HIDE SCROLLBAR */
+
+        .product-grid::-webkit-scrollbar,
+        .choices-grid::-webkit-scrollbar {
+          display: none;
+        }
+
+        .product-grid,
+        .choices-grid {
+          scrollbar-width: none;
+        }
+
+        /* PRODUCT CARD */
+
+        .card {
+          min-width: 85%;
+          max-width: 85%;
+
+          flex: 0 0 auto;
+
+          scroll-snap-align: center;
+
+          border-radius: 24px;
+        }
+
+        /* PRODUCT IMAGE */
+
+        .card img {
+          height: 230px;
+          object-fit: cover;
+        }
+
+        /* CARD CONTENT */
+
+        .card-content {
+          padding: 20px;
+        }
+
+        .card-content h3 {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+        }
+
+        .card-content p {
+          font-size: 0.9rem;
+          line-height: 1.7;
+          margin-bottom: 18px;
+        }
+
+        /* PRICE */
+
+        .price {
+          font-size: 0.82rem;
+          padding: 8px 15px;
+        }
+
+        /* BUTTON */
+
+        .order-btn {
+          width: 100%;
+          text-align: center;
+          padding: 13px 18px;
+          border-radius: 14px;
+          font-size: 0.92rem;
+        }
+
+        /* ===================================== */
+        /* ADDITIONAL CHOICES CARD */
+        /* ===================================== */
+
+        .choice-card {
+          min-width: 85%;
+          max-width: 85%;
+
+          flex: 0 0 auto;
+
+          scroll-snap-align: center;
+
+          padding: 30px 22px;
+
+          border-radius: 26px;
+        }
+
+        .choice-icon {
+          width: 65px;
+          height: 65px;
+          margin-bottom: 18px;
+        }
+
+        .choice-icon i {
+          font-size: 1.3rem;
+        }
+
+        .choice-card h3 {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+        }
+
+        .choice-card p {
+          font-size: 0.9rem;
+          line-height: 1.7;
+        }
+
+        /* SECTION SPACING */
+
+        #bouquets,
+        #keychains,
+        #additional-options {
+          overflow: hidden;
+        }
+      }
     </style>
   </head>
 
@@ -1216,6 +1560,7 @@
     </section>
 
     <!-- BOUQUETS -->
+    <p class="swipe-note"></p>
 
     <section id="bouquets">
       <div class="section-title">
@@ -1311,7 +1656,7 @@
     </section>
 
     <!-- KEYCHAIN -->
-
+    <p class="swipe-note"></p>
     <section id="keychains">
       <div class="section-title">
         <h2>Keychain Collection</h2>
@@ -1377,72 +1722,60 @@
       </div>
     </section>
 
-
     <!-- ADDITIONAL BOUQUET CHOICES -->
 
-<section id="additional-options">
-
-  <div class="section-title">
-    <h2>Additional Bouquet Choices</h2>
-    <p>Customize your handcrafted fuzzywire bouquet</p>
-  </div>
-
-  <div class="choices-grid">
-
-    <!-- WRAPPER -->
-
-    
-    <!-- LIGHTS -->
-
-    <div class="choice-card">
-
-      <div class="choice-icon">
-        <i class="fa-solid fa-star"></i>
+    <section id="additional-options">
+      <div class="section-title">
+        <h2>Additional Bouquet Choices</h2>
+        <p>Customize your handcrafted fuzzywire bouquet</p>
       </div>
 
-      <h3>Fairy Lights</h3>
+      <div class="choices-grid">
+        <!-- WRAPPER -->
 
-      <p>
-        Soft glowing fairy lights wrapped around your bouquet for a dreamy effect.
-      </p>
+        <!-- LIGHTS -->
 
-    </div>
+        <div class="choice-card">
+          <div class="choice-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
 
-    <!-- MESSAGE -->
+          <h3>Fairy Lights</h3>
 
-    <div class="choice-card">
+          <p>
+            Soft glowing fairy lights wrapped around your bouquet for a dreamy
+            effect.
+          </p>
+        </div>
 
-      <div class="choice-icon">
-        <i class="fa-solid fa-envelope-open-text"></i>
+        <!-- MESSAGE -->
+
+        <div class="choice-card">
+          <div class="choice-icon">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+
+          <h3>Custom Message</h3>
+
+          <p>
+            Add a personalized handwritten/printed message card for your special
+            someone.
+          </p>
+        </div>
+
+        <!-- COLORS -->
+
+        <div class="choice-card">
+          <div class="choice-icon">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+
+          <h3>Color Theme</h3>
+
+          <p>Choose your preferred bouquet color palette.</p>
+        </div>
       </div>
-
-      <h3>Custom Message</h3>
-
-      <p>
-        Add a personalized handwritten/printed message card for your special someone.
-      </p>
-
-    </div>
-
-    <!-- COLORS -->
-
-    <div class="choice-card">
-
-      <div class="choice-icon">
-        <i class="fa-solid fa-palette"></i>
-      </div>
-
-      <h3>Color Theme</h3>
-
-      <p>
-        Choose your preferred bouquet color palette.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
     <!-- CONTACT -->
 
     <section id="contact">
