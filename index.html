@@ -1514,6 +1514,126 @@
 .see-more-btn:hover {
   transform: translateY(-4px);
 }
+
+      
+      .card,
+      .choice-card,
+      .contact-box {
+        opacity: 0;
+        transform: translateY(40px);
+
+        animation: fadeReveal 0.8s forwards;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .card:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeReveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .active-link {
+        background: var(--gradient) !important;
+        color: rgb(101, 178, 250) !important;
+      }
+
+      /* ===================================== */
+      /* SCROLL ANIMATION */
+      /* ===================================== */
+
+      .section-title,
+      .category-title,
+      .card,
+      .choice-card,
+      .contact-box,
+      .see-more-container {
+        opacity: 0;
+
+        transform: translateY(60px);
+
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s ease;
+      }
+
+      /* SHOW */
+
+      .show {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* DIFFERENT EFFECTS */
+
+      .category-title {
+        transform: translateX(-60px);
+      }
+
+      .contact-box {
+        transform: scale(0.9);
+      }
+
+      .choice-card:nth-child(2) {
+        transform: translateY(80px);
+      }
+
+      .choice-card:nth-child(3) {
+        transform: translateX(60px);
+      }
+
+      /* CARD HOVER SMOOTHNESS */
+
+      .card,
+      .choice-card {
+        will-change: transform;
+      }
+
+      /* MOBILE PERFORMANCE */
+
+      @media (max-width: 768px) {
+        .section-title,
+        .category-title,
+        .card,
+        .choice-card,
+        .contact-box,
+        .see-more-container {
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+        }
+      }
+
+      /* ===================================== */
+      /* MOBILE HEADER LOGO SIZE */
+      /* ===================================== */
+
+      @media (max-width: 768px) {
+        .logo img {
+          width: 135px;
+          max-width: 100%;
+        }
+
+        nav {
+          padding: 14px 0;
+        }
+
+        .menu-toggle {
+          width: 40px;
+          height: 40px;
+        }
+      }
     </style>
   </head>
 
@@ -1962,6 +2082,77 @@
       }
 
       setInterval(changeSlide, 4000);
+
+      
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".sidebar a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+
+          if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active-link");
+
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active-link");
+          }
+        });
+      });
+
+      /* ===================================== */
+      /* SCROLL REVEAL ANIMATION */
+      /* ===================================== */
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      /* REVEAL ELEMENTS */
+
+      document
+        .querySelectorAll(
+          ".section-title, .card, .choice-card, .contact-box, .category-title, .see-more-container",
+        )
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      /* STAGGER PRODUCT CARDS */
+
+      document.querySelectorAll(".product-grid").forEach((grid) => {
+        const cards = grid.querySelectorAll(".card");
+
+        cards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.12}s`;
+        });
+      });
+
+      /* STAGGER CHOICE CARDS */
+
+      document.querySelectorAll(".choices-grid").forEach((grid) => {
+        const cards = grid.querySelectorAll(".choice-card");
+
+        cards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.15}s`;
+        });
+      });
     </script>
   </body>
 </html>
